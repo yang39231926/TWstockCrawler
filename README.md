@@ -4,19 +4,19 @@
 我把這個程式作為我期末報告的動機是因為我想到python這個語言最先想到的是它爬蟲很方便。再加上這門課是在叫做大數據與程式設計導論，老師課堂上也有教到爬蟲。因此我覺得做爬蟲相關程式會很貼合這門課的主題。又因金融相關的資料算是相對容易蒐集到大量數據的領域，本身也對股市有些興趣，也有在買股票。所以最後才把「網路爬蟲個股資訊做技術分析並視覺化」作為我的期末報告，之後看股票也能把這程式拿出來用用。
 
 ## 二、程式設計目標
-撰寫Python程式，擷取指定期間的個股資訊，並把資料繪製出來。要爬的網站是台灣證交所的個股日收盤價及月平均收盤價(https://www.twse.com.tw/zh/trading/historical/stock-day.html)。進去該網址我發現當我按查詢時，網頁會 request 一個網址(如下圖)：
-![image](https://i.imgur.com/mA55KjK.png)
+撰寫Python程式，擷取指定期間的個股資訊，並把資料繪製出來。要爬的網站是台灣證交所的個股日收盤價及月平均收盤價(https://www.twse.com.tw/zh/trading/historical/stock-day.html) 。進去該網址我發現當我按查詢時，網頁會 request 一個網址(如下圖)：
+![image](https://i.imgur.com/mA55KjK.png) 
 
-而這個網址(https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?date=20231218&stockNo=2454)會點進去會是一個 json檔(如下圖)：
-![image](https://i.imgur.com/UhI7H9Z.png)
+而這個網址(https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?date=20231218&stockNo=2454) 會點進去會是一個 json檔(如下圖)：
+![image](https://i.imgur.com/UhI7H9Z.png) 
 
 
 
 我們可以透過更改網址後面的stockNo與date取得不同時間的個股資訊。透過這個方法我只要輸入股票代號以及起訖時間就可以得到不同時間的個股資訊。(下圖為輸入畫面) 
-![image](https://i.imgur.com/VjYivRp.png)
+![image](https://i.imgur.com/VjYivRp.png) 
 
 若輸入格式無誤則程式會先看這個時段有沒有爬過，有爬過就直接讀檔並繪製個股資訊，沒有的話程式會開始爬蟲，並把結果儲存在目前的目錄底下。(如下圖所示)
-![image](https://i.imgur.com/4nwOyx6.png)
+![image](https://i.imgur.com/4nwOyx6.png) 
 
 
 最後個股資訊呈現的結果如下圖，圖包含了日K，周、月、三月均線、成交量、KD以及MACD/DIF。
